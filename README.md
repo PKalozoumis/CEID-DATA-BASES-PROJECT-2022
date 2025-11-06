@@ -52,19 +52,19 @@ thus communication between the GUI and the database happens directly, without a 
 You can build the project with the IDE of your choice. Gradle files are provided for convenience and  reproducibility, allowing you to build and run the project entirely from the terminal, too.
 
 First, clone this repository and enter the directory:
-```
+```bash
 git clone git@github.com:PKalozoumis/CEID-DATA-BASES-PROJECT-2022.git
 
 cd CEID-DATA-BASES-PROJECT-2022
 ```
 
 To create and populate the database, enter the directory with the SQL scripts:
-```
+```bash
 cd sql/source
 ```
 
 Make sure you have access to your ```mysql``` server. Then, connect to the server and source the main script. This will automatically create the database, with all the tables and records:
-```
+```mysql
 SOURCE main.sql
 ```
 While in the server, create a new user who will be used by the application "backend" to connect the database. This step is optional, as you can use an already existing user. The following ```mysql``` command will create a user named ```db_project_2022_user``` with an empty password:
@@ -72,14 +72,14 @@ While in the server, create a new user who will be used by the application "back
 CREATE USER 'db_project_2022_user'@'localhost' IDENTIFIED BY '';
 ```
 Grant the user permissions to the new database:
-```
+```mysql
 GRANT ALL PRIVILEGES ON db_project_2022.* TO USER 'db_project_2022_user'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 ```
 
 Exit the server. Back in the base directory, create a copy of or rename the ```.env.template``` file into a new file named ```.env```. Edit it with your database credentials:
-```
+```env
 DB_USER = db_project_2022_user
 DB_PASS =
 DB_HOST = localhost
@@ -88,13 +88,13 @@ DB_NAME = db_project_2022
 ```
 ## Build and Run
 From the base directory, enter the ```gui``` directory.
-```
+```bash
 cd gui
 ```
 
 ### Installing Java
 To build the application, Java is required. To check if Java is installed, run the following:
-```
+```bash
 java -version
 ```
 You should see something like the following:
@@ -109,7 +109,7 @@ If it's not installed and you're on Windows, download Java from either one of th
 - [Adoptium OpenJDK](https://adoptium.net/)
 
 On Debian-based distributions (e.g. Ubuntu), run the following:
-```
+```bash
 # Update package lists
 sudo apt update
 
@@ -122,12 +122,12 @@ In both cases, verify the installation with ```java --version```
 
 ### Running the app
 In the ```gui``` directory, you need to build the application with gradle. Just run the following:
-```
+```bash
 ./gradlew build
 ```
 
 Once the building is complete, run the app with:
-```
+```bash
 ./gradlew run
 ```
 
@@ -150,14 +150,14 @@ In the login screen, choose any one of the IT workers to log-in as. Here are som
 The ```reservaton_offer``` table is filled with 60k records of reservations made by random customers for one  of the 3 offers in the test scenario. The names of these customers are composed by shuffling first and last names from the external file ```reservation_offer/names.txt```. For this purpose, a Python script is used.
 
 To use the script, first install the required dependencies:
-```
+```bash
 pip install mysql-connector-python
 
 pip install python-dotenv
 ```
 
 From the base directory, follow the path to the script and execute it:
-```
+```bash
 cd reservation_offer
 
 python reservation_offer.py
