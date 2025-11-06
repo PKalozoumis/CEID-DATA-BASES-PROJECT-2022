@@ -1,3 +1,4 @@
 .vscode
 .env
 reservation_offer/venv
+sql/schema/.$er.drawio.bkp
