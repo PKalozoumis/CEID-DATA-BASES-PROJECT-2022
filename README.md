@@ -1,4 +1,4 @@
-# CEID-DATA-BASES-PROJECT-2022
+# 🌐 CEID-DATA-BASES-PROJECT-2022
 
 This project was made for the **5th semester** undergraduate course "Databases" of the **Computer Engineering & Informatics Department (CEID), University of Patras**.
 
