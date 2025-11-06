@@ -73,7 +73,7 @@ CREATE USER 'db_project_2022_user'@'localhost' IDENTIFIED BY '';
 ```
 Grant the user permissions to the new database:
 ```mysql
-GRANT ALL PRIVILEGES ON db_project_2022.* TO USER 'db_project_2022_user'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON db_project_2022.* TO 'db_project_2022_user'@'localhost' WITH GRANT OPTION;
 
 FLUSH PRIVILEGES;
 ```
