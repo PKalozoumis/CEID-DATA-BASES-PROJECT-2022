@@ -58,6 +58,8 @@ git clone git@github.com:PKalozoumis/CEID-DATA-BASES-PROJECT-2022.git
 cd CEID-DATA-BASES-PROJECT-2022
 ```
 
+## Setting Up the Database
+
 To create and populate the database, enter the directory with the SQL scripts:
 ```bash
 cd sql/source
@@ -86,13 +88,8 @@ DB_HOST = localhost
 DB_PORT = 3306
 DB_NAME = db_project_2022
 ```
-## Build and Run
-From the base directory, enter the ```gui``` directory.
-```bash
-cd gui
-```
 
-### Installing Java
+## Installing Java
 To build the application, Java is required. To check if Java is installed, run the following:
 ```bash
 java -version
@@ -105,10 +102,10 @@ OpenJDK 64-Bit Server VM Temurin-17.0.17+10 (build 17.0.17+10, mixed mode, shari
 ```
 
 If it's not installed and you're on Windows, download Java from either one of these links:
-- [Oracle JDK](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
 - [Adoptium OpenJDK](https://adoptium.net/)
+- [Oracle JDK](https://www.oracle.com/java/technologies/downloads)
 
-On Debian-based distributions (e.g. Ubuntu), run the following:
+On Linux, it is recommended to use something like [SDKMAN](https://sdkman.io/), which allows you to easily download and manage different versions of Java. However, for the sake of convenience, on Debian-based distributions (e.g. Ubuntu), you run the following:
 ```bash
 # Update package lists
 sudo apt update
@@ -120,8 +117,13 @@ sudo apt install openjdk-21-jdk
 In both cases, verify the installation with ```java --version```
 
 
-### Running the app
-In the ```gui``` directory, you need to build the application with gradle. Just run the following:
+## Build and Run the App
+From the base directory, enter the ```gui``` directory.
+```bash
+cd gui
+```
+
+Here, you need to build the application with gradle. Just run the following:
 ```bash
 ./gradlew build
 ```
